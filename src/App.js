@@ -1,25 +1,33 @@
+import { useState } from 'react';
+
 function Square(){
-  return <button className="square"></button>
+  const [value, setValue] = useState(null);
+  function handleClick(){
+    setValue('X');
+  }
+  return (
+  <button className="square" onClick={handleClick}>{value}</button>
+  )
 }
 
 export default function Broad() {
   return(
     <>
-    <div className="board-row">
-      <Square />
-      <Square />
-      <Square />
-    </div>
-    <div className="board-row">
-      <Square />
-      <Square />
-      <Square />
-    </div>
-    <div className="board-row">
-      <Square />
-      <Square />
-      <Square />
-    </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className="board-row">
+        <Square />
+        <Square />
+        <Square />
+      </div>
     </>
   ) 
 }
